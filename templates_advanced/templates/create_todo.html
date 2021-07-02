@@ -1,0 +1,21 @@
+{# {% extends 'base.html' %} #}
+{# {% block content %} #}
+    {# <form action="{% url 'create todo' %}" method="POST"></form> #}
+        {# {% csrf_token %} #}
+        {# {{ form }} #}
+        {# <button>Create</button> #}
+    {# </form> #}
+{# {% endblock %} #}
+
+
+{% extends 'base_sidebar.html' %}
+{% block sidebar %}
+<h3>This is sidebar!</h3>
+{% endblock %}
+{% block main_content %}
+    <form action="{% url 'create todo' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button>Create</button>
+    </form>
+{% endblock %}

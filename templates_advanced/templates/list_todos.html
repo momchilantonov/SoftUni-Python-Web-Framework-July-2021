@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load capitalize_filter %}
+{% block content %}
+<ul>
+    {% for todo in todos %}
+    <li>{{todo.text|capitalize }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
