@@ -9,8 +9,9 @@
 
 
 {% extends 'base_sidebar.html' %}
+{% load todos_tags %}
 {% block sidebar %}
-<h3>This is sidebar!</h3>
+{% todos_preview %}
 {% endblock %}
 {% block main_content %}
     <form action="{% url 'create todo' %}" method="POST">

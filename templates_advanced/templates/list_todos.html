@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% load capitalize_filter %}
+{% load todos_tags %}
 {% block content %}
 <ul>
+    {% todos_count %}
     {% for todo in todos %}
-    <li>{{todo.text|capitalize }}</li>
+    <li>{{ todo.text|lower|capitalize:4 }}</li>
     {% endfor %}
 </ul>
 {% endblock %}
