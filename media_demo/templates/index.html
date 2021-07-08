@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Phones</title>
+</head>
+<body>
+    <form action="{% url 'create phone' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button>Create</button>
+    </form>
+    <ul class="list">
+        {% for phone in phones %}
+            <li>
+                {% if phone.selected_image %}
+                    <img src="{{ phone.selected_image.image.url }}" alt="img">
+                {% else %}
+                    <img src="{% static 'imgs/phone2.jpeg' %}" alt="">
+                {% endif %}
+                {{ phone.manufacturer }}
+                {{ phone.model }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
