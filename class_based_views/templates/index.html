@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Welcome to our site!</h1>
+<h2>{{ title }}</h2>
+<ul>
+    <li>
+        <a href="{% url 'index' %}">Go to index</a>
+    </li>
+    <li>
+        <a href="{% url 'cbv index' %}">Go to index (CBV)</a>
+    </li>
+    <li>
+        <a href="{% url 'show cats' %}">Go to cats</a>
+    </li>
+    <li>
+        <a href="{% url 'cbv show cats' %}">Go to cats (CBV)</a>
+    </li>
+    <li>
+        <a href="{% url 'create cat' %}">Create cat (CBV)</a>
+    </li>
+</ul>
+</body>
+</html>
